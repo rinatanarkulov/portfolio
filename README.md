@@ -1,50 +1,63 @@
 # DevOps Portfolio - Rinat Anarkulov
 
-Self-taught DevOps engineer building real infrastructure projects.
+Self-taught DevOps engineer building production-grade infrastructure.
 
-## Projects
+## Featured Project: Multi-Environment CI/CD Pipeline
 
-### 1. Real-Time Multiplayer Tic-Tac-Toe
-**Tech Stack:** Python, Flask-SocketIO, Docker, Kubernetes, Jenkins
+**Tech Stack:** Jenkins, Docker, Kubernetes, Python, Flask-SocketIO, GitHub
 
-- Built real-time multiplayer game with WebSocket communication
-- Containerized with Docker, deployed to Kubernetes (microk8s)
-- Full CI/CD pipeline with Jenkins (automated build, test, deploy)
-- Auto-deployment on git push via SCM polling
-- 2 replicas with load balancing via NodePort service
+Built a complete enterprise-grade CI/CD pipeline for a real-time multiplayer game:
 
-[View Repository](https://github.com/rinatanarkulov/tictactoe-multiplayer)
+- **Automated Pipeline:** Code commit → Build → Test → Deploy
+- **Three Environments:** Dev (auto), Staging (approval), Production (approval)
+- **Real Testing:** Unit tests run in Docker, blocking deployment on failure
+- **Kubernetes Namespaces:** Isolated dev/staging/prod environments
+- **Rolling Updates:** Zero-downtime deployments via kubectl
+- **GitHub Integration:** SCM polling triggers builds on push
 
-### 2. Server Monitoring System
+[View Tic-Tac-Toe Code](https://github.com/rinatanarkulov/tictactoe-multiplayer)
+
+## Other Projects
+
+### Server Monitoring System
 **Tech Stack:** Bash, Linux, Git
 
 - Automated health check scripts (CPU, memory, disk, containers)
 - Log rotation and cleanup automation
-- Cron-scheduled monitoring
+- Git-versioned infrastructure scripts
 
 [View Repository](https://github.com/rinatanarkulov/monitoring-project)
 
-### 3. Self-Hosted Infrastructure
+### Self-Hosted Infrastructure
 **Tech Stack:** Ubuntu Server, Docker, Kubernetes, AdGuard Home
 
-- Built personal homelab from scratch
+- Built personal homelab from scratch on bare metal
 - Configured Ubuntu Server with static IP and SSH
-- Running multiple services in Kubernetes
-- DNS-level ad blocking with AdGuard Home
+- Multiple services running in Kubernetes (game, AdGuard, Jenkins)
+- DNS-level ad blocking deployed via K8s
 
-## Skills
+## Technical Skills
 
-**Containers & Orchestration:** Docker, Kubernetes (microk8s), Docker Compose
+**Containers & Orchestration:**
+Docker, Kubernetes (microk8s), Docker Compose, multi-stage builds
 
-**CI/CD:** Jenkins, Pipeline as Code (Jenkinsfile)
+**CI/CD:**
+Jenkins, Pipeline as Code (Jenkinsfile), Multi-environment deployments, Manual approval gates
 
-**Linux:** Ubuntu Server administration, Bash scripting, systemd
+**Cloud-Native:**
+Kubernetes namespaces, Services, Deployments, Persistent Volumes, Rolling updates
 
-**Version Control:** Git, GitHub
+**Linux:**
+Ubuntu Server administration, Bash scripting, systemd, user/group management, file permissions
 
-**Programming:** Python, Bash
+**Version Control:**
+Git, GitHub, Pull requests, branching strategies
 
-**Networking:** SSH, static IP configuration, port forwarding, DNS
+**Programming:**
+Python (Flask, SocketIO), Bash, YAML, Groovy (Jenkinsfile)
+
+**Networking:**
+SSH, static IP configuration, NodePort services, DNS, port forwarding
 
 ## Contact
 
