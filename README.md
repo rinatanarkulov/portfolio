@@ -36,6 +36,16 @@ Built a complete enterprise-grade CI/CD pipeline for a real-time multiplayer gam
 - Multiple services running in Kubernetes (game, AdGuard, Jenkins)
 - DNS-level ad blocking deployed via K8s
 
+### Observability Stack: Prometheus + Grafana
+
+**Tech Stack:** Prometheus, Grafana, ServiceMonitor, Custom Metrics
+
+- Instrumented Flask app with custom Prometheus metrics
+- Deployed full monitoring stack on Kubernetes
+- Real-time visualization of application and infrastructure metrics
+- Custom dashboards tracking business metrics (games created, moves made)
+- Automatic service discovery via ServiceMonitor
+
 ## Technical Skills
 
 **Containers & Orchestration:**
