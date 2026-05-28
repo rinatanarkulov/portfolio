@@ -46,6 +46,17 @@ Built a complete enterprise-grade CI/CD pipeline for a real-time multiplayer gam
 - Custom dashboards tracking business metrics (games created, moves made)
 - Automatic service discovery via ServiceMonitor
 
+### Ansible Automation
+**Tech Stack:** Ansible, Jinja2, YAML
+
+- Wrote playbooks for automated server configuration
+- Built reusable roles with proper structure (tasks, handlers, templates)
+- Used Jinja2 templates for dynamic configuration
+- Deployed Nginx and Docker containers via automation
+- Implemented idempotent, repeatable infrastructure setup
+
+[View Repository](https://github.com/rinatanarkulov/ansible-practice)
+
 ## Technical Skills
 
 **Containers & Orchestration:**
