@@ -1,96 +1,54 @@
-# DevOps Portfolio - Rinat Anarkulov
+# DevOps Portfolio — Rinat Anarkulov
 
-Self-taught DevOps engineer building production-grade infrastructure on a self-hosted Kubernetes homelab.
+Self-taught DevOps engineer building production-style infrastructure on a self-hosted, multi-node Kubernetes homelab.
 
-## Featured Project: Scalable Multiplayer Game with Full CI/CD
+## Featured: Scalable Multiplayer Game with Full CI/CD
+**Stack:** Jenkins · Docker · Kubernetes · Python · Flask-SocketIO · Redis · Nginx Ingress
 
-**Tech Stack:** Jenkins, Docker, Kubernetes, Python, Flask-SocketIO, Redis, Nginx Ingress
-
-Built an enterprise-grade, horizontally-scalable real-time multiplayer game (Infinite Tic-Tac-Toe) with complete CI/CD automation:
-
-- **Automated Pipeline:** Code commit → Build → Test → Deploy
-- **Three Environments:** Dev (auto), Staging (approval), Production (approval)
-- **Real Testing:** Unit tests run in Docker, blocking deployment on failure
-- **Horizontal Scaling:** 3 replicas with Redis-backed shared state
-- **Session Affinity:** Cookie-based sticky sessions via Nginx Ingress for WebSocket stability
-- **Resilient State:** Game data in Redis survives pod restarts
-- **Startup Ordering:** Init containers ensure Redis is ready before app launch
-- **Rolling Updates:** Zero-downtime deployments
-- **HTTPS/TLS:** Secured with certificates
+A horizontally-scalable real-time multiplayer game (Infinite Tic-Tac-Toe) built with production-style CI/CD automation.
+- Code commit → Build → Test → Deploy
+- Dev / Staging / Prod environments with approval gates
+- Unit tests in Docker block bad deploys
+- 3 replicas with Redis-backed shared state
+- Cookie-based session affinity via Nginx Ingress for WebSocket stability
+- Init containers for startup ordering; HTTPS/TLS
 
 [View Code](https://github.com/rinatanarkulov/tictactoe-multiplayer)
 
 ## Other Projects
 
-### Observability Stack: Prometheus + Grafana
-**Tech Stack:** Prometheus, Grafana, ServiceMonitor, Custom Metrics
+### Self-Hosted Multi-Node Infrastructure
+**Stack:** Ubuntu Server · Kubernetes · Private Registry
+- Multi-node MicroK8s cluster built from bare-metal hardware
+- Private container registry with TLS, distributing images across nodes
+- Ubuntu Server: static IP (netplan), SSH, systemd, LVM storage
+- HTTPS via Nginx Ingress with TLS certificates
+- DNS-level ad blocking (AdGuard Home) deployed via K8s
 
-- Instrumented Flask app with custom Prometheus metrics
-- Deployed full monitoring stack on Kubernetes
-- Real-time visualization of application and infrastructure metrics
-- Custom dashboards tracking business metrics
-- Automatic service discovery via ServiceMonitor
+### Observability Stack: Prometheus + Grafana
+**Stack:** Prometheus · Grafana · ServiceMonitor
+- Custom application metrics, ServiceMonitor auto-discovery, Grafana dashboards
 
 ### Ansible Automation
-**Tech Stack:** Ansible, Jinja2, YAML
-
-- Wrote playbooks for automated server configuration
-- Built reusable roles (tasks, handlers, templates)
-- Jinja2 templates for dynamic configuration
-- Idempotent, repeatable infrastructure setup
+**Stack:** Ansible · Jinja2 · YAML
+- Reusable roles (tasks, handlers, templates); idempotent playbooks
 
 [View Repository](https://github.com/rinatanarkulov/ansible-practice)
 
 ### Server Monitoring System
-**Tech Stack:** Bash, Linux, Git
-
-- Automated health check scripts (CPU, memory, disk, containers)
-- Log rotation and cleanup automation
-- Git-versioned infrastructure scripts
+**Stack:** Bash · Linux · Git
+- Health-check scripts (CPU, memory, disk, containers); log rotation; Git-versioned
 
 [View Repository](https://github.com/rinatanarkulov/monitoring-project)
 
-### Self-Hosted Infrastructure
-**Tech Stack:** Ubuntu Server, Docker, Kubernetes, AdGuard Home
-
-- Built personal homelab from scratch on bare metal
-- Configured Ubuntu Server with static IP and SSH
-- Multiple services running in Kubernetes
-- DNS-level ad blocking deployed via K8s
-- HTTPS via Nginx Ingress with TLS certificates
-
 ## Technical Skills
-
-**Containers & Orchestration:**
-Docker, Kubernetes (microk8s), Docker Compose, multi-stage builds, init containers
-
-**CI/CD:**
-Jenkins, Pipeline as Code (Jenkinsfile), GitHub Actions, Multi-environment deployments, Manual approval gates
-
-**Cloud-Native:**
-Kubernetes namespaces, Services, Deployments, Ingress, Persistent Volumes, Rolling updates, Session affinity, Horizontal scaling
-
-**Data & Caching:**
-Redis (shared state, message broker), PostgreSQL
-
-**Observability:**
-Prometheus, Grafana, custom metrics, ServiceMonitor
-
-**Configuration Management:**
-Ansible (playbooks, roles, templates)
-
-**Linux:**
-Ubuntu Server administration, Bash scripting, systemd, networking, permissions
-
-**Version Control:**
-Git, GitHub, tokens, branching
-
-**Programming:**
-Python (Flask, SocketIO), Bash, YAML, Groovy
-
-**Networking:**
-SSH, static IP, NodePort, Ingress, DNS, TLS/HTTPS, sticky sessions
+**Containers & Orchestration:** Docker, Kubernetes (MicroK8s), multi-node clusters, private registry, init containers
+**CI/CD:** Jenkins, GitHub Actions, multi-environment pipelines, approval gates
+**Cloud-Native:** Ingress, Services, Deployments, session affinity, horizontal scaling, Persistent Volumes
+**Data & Observability:** Redis, PostgreSQL, Prometheus, Grafana
+**Automation & Linux:** Ansible, Bash, Ubuntu Server, systemd, networking
+**Version Control:** Git, GitHub
+**Programming:** Python (Flask, SocketIO), Bash, YAML, Groovy
 
 ## Contact
-
 GitHub: [@rinatanarkulov](https://github.com/rinatanarkulov)
