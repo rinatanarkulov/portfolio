@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rinat Anarkulov - DevOps Engineer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0e27;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        h1 { font-size: 3em; margin-bottom: 10px; }
+        .subtitle { font-size: 1.3em; color: #b0c4de; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section-title { margin-bottom: 30px; color: #fff; }
+        .project {
+            background: #1a1f3a;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4a90e2;
+        }
+        .project.featured {
+            border-left: 4px solid #f5a623;
+            background: #1f2440;
+        }
+        .project h2 { color: #4a90e2; margin-bottom: 10px; }
+        .project.featured h2 { color: #f5a623; }
+        .tech-stack {
+            color: #95a5a6;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .project ul { margin: 15px 0; padding-left: 20px; }
+        .project li { margin-bottom: 5px; }
+        .project a {
+            color: #4a90e2;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .project a:hover { text-decoration: underline; }
+        .skills {
+            background: #1a1f3a;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .skills h3 { color: #4a90e2; margin: 15px 0 5px 0; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #050714;
+        }
+        footer a { color: #4a90e2; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rinat Anarkulov</h1>
+        <p class="subtitle">DevOps Engineer | Self-Taught | Building Production-Style Infrastructure</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Featured Project</h2>
+
+        <div class="project featured">
+            <h2>Scalable Multiplayer Game with Full CI/CD</h2>
+            <p class="tech-stack">Jenkins, Docker, Kubernetes, Python, Redis, Nginx Ingress</p>
+            <p>A horizontally-scalable real-time multiplayer game built with production-style CI/CD automation.</p>
+            <ul>
+                <li>3 replicas with Redis-backed shared state</li>
+                <li>Cookie-based sticky sessions via Nginx Ingress</li>
+                <li>Dev/Staging/Prod environments with approval gates</li>
+                <li>Automated testing blocks bad deploys</li>
+                <li>Init containers + HTTPS/TLS</li>
+            </ul>
+            <p>
+                <a href="https://github.com/rinatanarkulov/tictactoe-multiplayer">GitHub</a>
+                <a href="https://tictactoe.rinatanarkulov.com" target="_blank">▶ Play Live</a>
+            </p>
+        </div>
+
+        <h2 class="section-title">Other Projects</h2>
+
+        <div class="project">
+            <h2>Self-Hosted Multi-Node Infrastructure</h2>
+            <p class="tech-stack">Ubuntu Server, Docker, Kubernetes, Private Registry</p>
+            <p>A multi-node Kubernetes cluster built from bare-metal hardware, running all my projects.</p>
+            <ul>
+                <li>Multi-node cluster (MicroK8s) across separate machines</li>
+                <li>Private container registry with TLS, distributing images across nodes</li>
+                <li>Ubuntu Server: static IP (netplan), SSH, systemd, LVM storage</li>
+                <li>HTTPS via Nginx Ingress with TLS certificates</li>
+                <li>DNS-level ad blocking (AdGuard Home) deployed via K8s</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <h2>2048 Game Deployment</h2>
+            <p class="tech-stack">Docker, Nginx, Kubernetes</p>
+            <p>Open-source 2048 game containerized and deployed to my self-hosted Kubernetes cluster.</p>
+            <p>
+                <a href="http://192.168.1.100:30600" target="_blank">▶ Play 2048</a>
+            </p>
+        </div>
+
+        <div class="project">
+            <h2>Observability Stack</h2>
+            <p class="tech-stack">Prometheus, Grafana, Kubernetes</p>
+            <p>Full monitoring stack with custom metrics, ServiceMonitor auto-discovery, and Grafana dashboards tracking application metrics.</p>
+        </div>
+
+        <div class="project">
+            <h2>Ansible Automation</h2>
+            <p class="tech-stack">Ansible, Jinja2, YAML</p>
+            <p>Reusable playbooks and roles for automated server configuration with idempotent operations.</p>
+            <p>
+                <a href="https://github.com/rinatanarkulov/ansible-practice">GitHub</a>
+            </p>
+        </div>
+
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills">
+            <h3>Containers & Orchestration</h3>
+            <p>Docker, Kubernetes (microk8s), multi-node clusters, private registry, init containers</p>
+
+            <h3>CI/CD</h3>
+            <p>Jenkins, GitHub Actions, Multi-environment pipelines, Approval gates</p>
+
+            <h3>Cloud-Native</h3>
+            <p>Ingress, Services, Deployments, Session affinity, Horizontal scaling, Persistent Volumes</p>
+
+            <h3>Data & Observability</h3>
+            <p>Redis, PostgreSQL, Prometheus, Grafana</p>
+
+            <h3>Automation & Linux</h3>
+            <p>Ansible, Bash, Ubuntu Server, systemd, networking</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>GitHub: <a href="https://github.com/rinatanarkulov">@rinatanarkulov</a></p>
+    </footer>
+</body>
+</html>
