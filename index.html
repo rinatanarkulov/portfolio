@@ -73,15 +73,15 @@
         <h2 class="section-title">Featured Project</h2>
 
         <div class="project featured">
-            <h2>Scalable Multiplayer Game with Full CI/CD</h2>
-            <p class="tech-stack">Jenkins, Docker, Kubernetes, Python, Redis, Nginx Ingress</p>
-            <p>A horizontally-scalable real-time multiplayer game built with production-style CI/CD automation.</p>
+            <h2>Scalable Multiplayer Game — CI/CD + Autoscaling</h2>
+            <p class="tech-stack">Jenkins, Docker, Kubernetes, Python, Redis, Nginx Ingress, Cloudflare</p>
+            <p>A horizontally-scalable real-time multiplayer game, deployed to production on my own cluster and live on the public internet.</p>
             <ul>
-                <li>3 replicas with Redis-backed shared state</li>
-                <li>Cookie-based sticky sessions via Nginx Ingress</li>
-                <li>Dev/Staging/Prod environments with approval gates</li>
-                <li>Automated testing blocks bad deploys</li>
-                <li>Init containers + HTTPS/TLS</li>
+                <li>Kubernetes HPA autoscaling: 2→12 pods on live CPU load (load-tested 2→10→2)</li>
+                <li>Load-balanced across bare-metal multi-node cluster</li>
+                <li>Dev/Staging/Prod CI/CD with approval gates</li>
+                <li>Redis-backed shared state + session affinity for WebSockets</li>
+                <li>Public HTTPS via Cloudflare Tunnel on a custom domain</li>
             </ul>
             <p>
                 <a href="https://github.com/rinatanarkulov/tictactoe-multiplayer">GitHub</a>
@@ -93,17 +93,16 @@
 
         <div class="project">
             <h2>Self-Hosted Multi-Node Infrastructure</h2>
-            <p class="tech-stack">Ubuntu Server, Docker, Kubernetes, Private Registry</p>
+            <p class="tech-stack">Ubuntu Server, Kubernetes, Docker, Private Registry</p>
             <p>A multi-node Kubernetes cluster built from bare-metal hardware, running all my projects.</p>
             <ul>
                 <li>Multi-node cluster (MicroK8s) across separate machines</li>
                 <li>Private container registry with TLS, distributing images across nodes</li>
-                <li>Ubuntu Server: static IP (netplan), SSH, systemd, LVM storage</li>
-                <li>HTTPS via Nginx Ingress with TLS certificates</li>
-                <li>DNS-level ad blocking (AdGuard Home) deployed via K8s</li>
+                <li>metrics-server + resource limits enabling CPU-based autoscaling</li>
+                <li>Ubuntu admin: netplan, systemd, LVM, safe node draining & rolling reboots</li>
+                <li>HTTPS via Nginx Ingress + Cloudflare Tunnel; AdGuard Home ad-blocking</li>
             </ul>
         </div>
-
         <div class="project">
             <h2>2048 Game Deployment</h2>
             <p class="tech-stack">Docker, Nginx, Kubernetes</p>

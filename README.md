@@ -2,53 +2,47 @@
 
 Self-taught DevOps engineer building production-style infrastructure on a self-hosted, multi-node Kubernetes homelab.
 
-## Featured: Scalable Multiplayer Game with Full CI/CD
-**Stack:** Jenkins · Docker · Kubernetes · Python · Flask-SocketIO · Redis · Nginx Ingress
+## Featured: Scalable Multiplayer Game — Full CI/CD + Autoscaling
+**Stack:** Jenkins · Docker · Kubernetes · Python · Flask-SocketIO · Redis · Nginx Ingress · Cloudflare
 
-A horizontally-scalable real-time multiplayer game (Infinite Tic-Tac-Toe) built with production-style CI/CD automation.
-- Code commit → Build → Test → Deploy
-- Dev / Staging / Prod environments with approval gates
-- Unit tests in Docker block bad deploys
-- 3 replicas with Redis-backed shared state
-- Cookie-based session affinity via Nginx Ingress for WebSocket stability
-- Init containers for startup ordering; HTTPS/TLS
+A horizontally-scalable real-time multiplayer game, deployed to production on my own cluster and reachable on the public internet.
+
+- **Autoscaling:** Kubernetes HPA scales the app from 2 to 12 pods based on live CPU load, verified under load testing (2 → 10 → 2)
+- **Multi-node:** pods load-balanced across bare-metal nodes; scale-up distributes work to the least-busy node
+- **CI/CD:** Jenkins pipeline — build, test, and promotion across dev → staging → prod with manual approval gates
+- **Shared state:** Redis backs game state so any pod can serve any player; cookie-based session affinity via Nginx Ingress keeps WebSockets stable
+- **Public hosting:** exposed securely via Cloudflare Tunnel on a custom domain, HTTPS end-to-end, no ports opened on the home network
+- **Live demo:** [tictactoe.rinatanarkulov.com](https://tictactoe.rinatanarkulov.com) — three game modes with real-time mode switching, live scores, and player names
 
 [View Code](https://github.com/rinatanarkulov/tictactoe-multiplayer)
 
-## Other Projects
+## Self-Hosted Multi-Node Infrastructure
+**Stack:** Ubuntu Server · Kubernetes (MicroK8s) · Docker · Private Registry
 
-### Self-Hosted Multi-Node Infrastructure
-**Stack:** Ubuntu Server · Kubernetes · Private Registry
-- Multi-node MicroK8s cluster built from bare-metal hardware
-- Private container registry with TLS, distributing images across nodes
-- Ubuntu Server: static IP (netplan), SSH, systemd, LVM storage
-- HTTPS via Nginx Ingress with TLS certificates
+- Multi-node Kubernetes cluster built from bare-metal hardware, joining worker nodes to a control plane
+- **Private container registry with TLS**, distributing images across all nodes
+- metrics-server + resource requests/limits enabling CPU-based autoscaling
+- Ubuntu Server administration: static IP (netplan), SSH, systemd, LVM storage, safe node draining and rolling reboots
 - DNS-level ad blocking (AdGuard Home) deployed via K8s
 
-### Observability Stack: Prometheus + Grafana
+## Observability Stack: Prometheus + Grafana
 **Stack:** Prometheus · Grafana · ServiceMonitor
 - Custom application metrics, ServiceMonitor auto-discovery, Grafana dashboards
 
-### Ansible Automation
+## Infrastructure Automation with Ansible
 **Stack:** Ansible · Jinja2 · YAML
-- Reusable roles (tasks, handlers, templates); idempotent playbooks
+- Reusable roles and idempotent playbooks for automated server configuration
 
-[View Repository](https://github.com/rinatanarkulov/ansible-practice)
-
-### Server Monitoring System
-**Stack:** Bash · Linux · Git
-- Health-check scripts (CPU, memory, disk, containers); log rotation; Git-versioned
-
-[View Repository](https://github.com/rinatanarkulov/monitoring-project)
+[Ansible repo](https://github.com/rinatanarkulov/ansible-practice) · [Monitoring repo](https://github.com/rinatanarkulov/monitoring-project)
 
 ## Technical Skills
-**Containers & Orchestration:** Docker, Kubernetes (MicroK8s), multi-node clusters, private registry, init containers
+**Containers & Orchestration:** Docker, Kubernetes (MicroK8s), multi-node clusters, HPA autoscaling, private registry, init containers
 **CI/CD:** Jenkins, GitHub Actions, multi-environment pipelines, approval gates
-**Cloud-Native:** Ingress, Services, Deployments, session affinity, horizontal scaling, Persistent Volumes
+**Cloud-Native:** Ingress, Services, Deployments, session affinity, horizontal scaling, resource limits, Persistent Volumes
 **Data & Observability:** Redis, PostgreSQL, Prometheus, Grafana
 **Automation & Linux:** Ansible, Bash, Ubuntu Server, systemd, networking
-**Version Control:** Git, GitHub
-**Programming:** Python (Flask, SocketIO), Bash, YAML, Groovy
+**Networking & Hosting:** Nginx Ingress, TLS/HTTPS, Cloudflare Tunnel, DNS
+**Programming:** Python (Flask), Bash, YAML, Groovy
 
 ## Contact
 GitHub: [@rinatanarkulov](https://github.com/rinatanarkulov)
